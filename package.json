@@ -1,15 +1,26 @@
 {
   "name": "@bunner/core",
+  "version": "0.0.1",
   "type": "module",
   "module": "index.ts",
+  "scripts": {
+    "lint": "oxlint --config ./.oxlintrc.jsonc --type-aware --fix .",
+    "firebat": "bunx firebat",
+    "test": "bun test",
+    "build": "bun run tsc --noEmit"
+  },
   "dependencies": {
-    "@bunner/common": "workspace:*",
-    "@bunner/logger": "workspace:*",
+    "@bunner/common": "github:parkrevil/bunner-common#main",
+    "@bunner/logger": "github:parkrevil/bunner-logger#main",
     "dotenv": "^16.4.5",
     "exponential-backoff": "^3.1.2"
   },
   "devDependencies": {
+    "@bunner/firebat": "github:parkrevil/bunner-firebat#main",
+    "@bunner/oxlint-plugin": "github:parkrevil/bunner-oxlint-plugin#main",
     "@types/bun": "^1.3.0",
+    "oxfmt": "^0.26.0",
+    "oxlint": "^1.41.0",
     "typescript": "^5"
   }
 }
